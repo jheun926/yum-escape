@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import score from "./moduls/score";
+import score from "./modules/score";
 
 export default combineReducers({
     score,

@@ -1,6 +1,7 @@
 // 액션 타입(문자열)
 
 const NEXT = "score/NEXT";
+const CHECK_CORRECT = "score/CHECK_CORRECT";
 
 export function next() {
     return {
@@ -8,18 +9,16 @@ export function next() {
     };
 }
 
+export function check({ isCorrect }) {
+    return {
+        type: CHECK_CORRECT,
+        payload: { isCorrect },
+    };
+}
+
 const initialState = {
-    score: 0,
-    quizs: [
-        {
-            q: "첫번재 문제",
-            a: "첫번째 정답",
-        },
-        {
-            q: "두번째 문제",
-            a: "두번째 정답",
-        },
-    ],
+    page: 0,
+    answer: ["answer1", "answer2", "answer3", "answer4", "answer5", "answer6", "answer7", "answer8", "answer9", "answer10"],
 };
 
 export default function score(state = initialState, action) {
@@ -27,7 +26,7 @@ export default function score(state = initialState, action) {
         case NEXT:
             return {
                 ...state,
-                score: state.score + 1,
+                page: state.page + 1,
             };
         default:
             return state;

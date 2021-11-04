@@ -2,6 +2,7 @@ import { Button } from "antd";
 import React from "react";
 import { useHistory } from "react-router-dom";
 
+
 function InitPage() {
     const history = useHistory();
 
